@@ -6,10 +6,11 @@ import Movie from "./Movies/Movie";
 import axios from 'axios';
 import MoviesForm from "./Movies/MoviesForm";
 import AddMovie from "./Movies/AddMovie";
-
+import './App.css'
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movieList, setMovieList] = useState([]);
+  const [stars,setStars] = useState([]);
 
   const getMovieList = () => {
     axios
@@ -38,7 +39,7 @@ const App = () => {
         <Movie addToSavedList={addToSavedList} />
       </Route>
       <Route path ="/update-movie/:id">
-        <MoviesForm setMovieList={setMovieList}/>
+        <MoviesForm setMovieList={setMovieList} stars={stars} setStars={setStars}  />
         </Route>
 
         <Route path="/add-movie">

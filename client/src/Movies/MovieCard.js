@@ -11,8 +11,13 @@ const MovieCard = props => {
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
       </div>
+      <div className="movie-actors">
       <h3>Actors</h3>
-
+      </div>
+     
+      <div className="stars-card">
+        <strong>{stars}</strong>
+      </div>
      
     </div>
   );

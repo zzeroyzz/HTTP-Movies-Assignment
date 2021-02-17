@@ -1,0 +1,15 @@
+body{
+    background-image: url("https://image.freepik.com/free-vector/cinema-room-background_1017-8728.jpg");
+    padding: 10%;
+}
+
+a{
+    text-decoration: none;
+}
+.movie-card{
+    background-image: url("https://t3.ftcdn.net/jpg/00/47/40/02/360_F_47400213_AgAsGC2y45UJaYQoWmNc3pb3BtG1agta.jpg");
+    color:black;
+}
+.saved-list{
+    background-image: url("https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/nachos.jpg?TQkkLZqX.7e6Sa4yRdJcQyJTwG1p4u4Zgi");
+}
