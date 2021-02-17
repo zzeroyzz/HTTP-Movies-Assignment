@@ -1,15 +1,18 @@
 import axios from "axios";
 import React, {useState,useEffect} from "react";
+import { useParams, useHistory } from "react-router-dom"
+
 
 const MoviesForm = (props) => {
-    const [movie, setMovie] = useState(
-        {
-            title:props.movie.title,
-            director: props.movie.director,
-            metascore:props.movie.metascore,
-            stars: props.movie.stars,
-          }
-    )
+    const { id } = useParams();
+    const { push } = useHistory();
+    const initialMovie ={
+        title:"",
+        director:"",
+        metascore:"",
+        stars:[]
+    }
+    const [movie, setMovie] = useState(initialMovie)
 
     const editMovie = () =>{
         axios
@@ -57,7 +60,7 @@ const MoviesForm = (props) => {
             console.error("error unable to update movie ${id} ",err)
 
         })
-        push(`/movies`)
+        push(`/movies/${id}`)
     }
 
     return(
@@ -70,7 +73,7 @@ const MoviesForm = (props) => {
             name="title"
             onChange={handleChange}
             placeholder="title"
-            value={title}
+            value={movie.title}
             />
             <input
             type="text"
@@ -78,7 +81,7 @@ const MoviesForm = (props) => {
             name="director"
             onChange={handleChange}
             placeholder="director"
-            value={director}
+            value={movie.director}
             />
             <input
             type="text"
@@ -86,7 +89,7 @@ const MoviesForm = (props) => {
             name="metascore"
             onChange={handleChange}
             placeholder="metascore"
-            value={metascore}
+            value={movie.metascore}
             />
             <input
             type="text"
@@ -94,7 +97,7 @@ const MoviesForm = (props) => {
             name="stars"
             onChange={handleChange}
             placeholder="stars"
-            value={stars}
+            value={movie.stars}
             />
 
 
